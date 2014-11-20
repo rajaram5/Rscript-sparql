@@ -6,11 +6,12 @@
 @since 20-11-2014
 
 <p>
-  This rscript query kegg pathway SPARQL endpoint to retrieve the pathways associated with the given Entrez GeneID  
+  This rscript query's the kegg pathway SPARQL endpoint to retrieve all pathways associated 
+with the given entrez geneID  
 </p>
 
-Input Required : Entrez GeneID
-Output : dataframe with Entrez GeneID, Pathway name and Pathway class
+Input Required : Entrez geneID
+Output : dataframe with Entrez geneID, Pathway name and Pathway class
 "
 
 library('SPARQL')
