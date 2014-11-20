@@ -18,6 +18,7 @@ library('SPARQL')
 # URL of the SPARQL enpoint
 endpoint <- "http://cu.kegg.bio2rdf.org/sparql"
 
+# SPARQL to retrieve pathwayName and pathwayClass for a given entrez geneID.
 queryStr <- "PREFIX void: <http://rdfs.org/ns/void#>
 PREFIX dv: <http://bio2rdf.org/bio2rdf.dataset_vocabulary:>
 PREFIX keggv: <http://bio2rdf.org/kegg_vocabulary:> 
@@ -33,11 +34,12 @@ dcterms:title ?pathwayName.
 
 }"
 
+# Substitute the entrez geneID in the SPARQL query string.
 EntrezGeneID <- "3350"
 queryStr <- gsub("geneID", EntrezGeneID, queryStr)
 
-# execute your query
+# Execute SPARQL query
 d <- SPARQL(url=endpoint, query=queryStr)
 
-# attach results to a data frame
+# Attach results to a data frame
 df <- data.frame(GeneID=EntrezGeneID, Pathwayname=d$results$pathwayNameStr, PathwayClass=factor(d$results$pathwayClassStr), stringsAsFactors=FALSE)
