@@ -18,7 +18,7 @@ library('SPARQL')
 uniprot.getProteinUriByGeneNameAndTaxoID <- function(geneName, taxonID){
 
 # URL of the SPARQL enpoint
-endpoint <- "http://agraph.biosemantics.org/catalogs/rajatest/repositories/test"
+endpoint <- "http://ep.dbcls.jp/fantom5/sparql"
 
 # SPARQL to retrieve protein URIs for a given gene name and taxoID.
 queryStr <- "
